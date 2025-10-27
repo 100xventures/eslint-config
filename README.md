@@ -40,14 +40,13 @@ export default [...base];
 Configs are fully composable. Override or extend as needed:
 
 ```javascript
-import { base, next } from '@100xventures/eslint-config';
+import { base } from '@100xventures/eslint-config';
 
 export default [
   ...base,
-  ...next,
   {
     rules: { 'semi': ['error', 'never'] }, // Override rules
-    ignores: ['dist/', 'build/'],         // Add ignores
+    ignores: ['dist/', 'build/'], // Add ignores
   },
 ];
 ```
