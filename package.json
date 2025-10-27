@@ -1,7 +1,7 @@
 {
   "name": "@100xventures/eslint-config",
   "type": "module",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "description": "Shared ESLint config for 100x projects",
   "license": "MIT",
   "main": "index.mjs",
@@ -29,5 +29,11 @@
   "peerDependencies": {
     "eslint": "^9.0.0"
   },
-  "repository": "github:100xventures/eslint-config"
+  "repository": "github:100xventures/eslint-config",
+  "scripts": {
+    "prepublishOnly": "pnpm publish --dry-run",
+    "release:patch": "pnpm version patch && pnpm publish --access public",
+    "release:minor": "pnpm version minor && pnpm publish --access public",
+    "release:major": "pnpm version major && pnpm publish --access public"
+  }
 }
