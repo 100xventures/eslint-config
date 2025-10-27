@@ -5,13 +5,18 @@
   "description": "Shared ESLint config for 100x projects",
   "license": "MIT",
   "main": "index.mjs",
+  "types": "index.d.ts",
   "exports": {
-    ".": "./index.mjs",
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.mjs"
+    },
     "./base": "./configs/base.mjs",
     "./next": "./configs/next.mjs"
   },
   "files": [
     "index.mjs",
+    "index.d.ts",
     "configs/"
   ],
   "keywords": [
