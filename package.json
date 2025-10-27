@@ -24,7 +24,7 @@
     "eslint-config"
   ],
   "dependencies": {
-    "eslint-plugin-import": "^2.31.0"
+    "eslint-plugin-import": "^2.32.0"
   },
   "peerDependencies": {
     "eslint": "^9.0.0"
