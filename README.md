@@ -5,23 +5,19 @@ Shared ESLint config for 100x projects.
 ## Installation
 
 ```bash
-npm install --save-dev @100xventures/eslint-config
+pnpm add -D @100xventures/eslint-config
 ```
 
 ## Usage
 
 ### Next.js
 
-Compose with Next.js configs using `@eslint/eslintrc` compatibility layer:
-
 ```javascript
-import { FlatCompat } from '@eslint/eslintrc';
 import { base, next } from '@100xventures/eslint-config';
-
-const compat = new FlatCompat({ baseDirectory: import.meta.dirname });
+import coreWebVitals from 'eslint-config-next/core-web-vitals';
 
 export default [
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  ...coreWebVitals,
   ...base,
   ...next,
 ];
