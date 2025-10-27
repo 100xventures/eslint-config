@@ -1,0 +1,28 @@
+{
+  "name": "@100xventures/eslint-config",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Shared ESLint config for 100x projects",
+  "license": "MIT",
+  "main": "index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./base": "./configs/base.mjs",
+    "./next": "./configs/next.mjs"
+  },
+  "files": [
+    "index.mjs",
+    "configs/"
+  ],
+  "keywords": [
+    "eslint",
+    "eslint-config"
+  ],
+  "dependencies": {
+    "eslint-plugin-import": "^2.31.0"
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0"
+  },
+  "repository": "github:100xventures/eslint-config"
+}
