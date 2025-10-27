@@ -29,10 +29,5 @@
   "peerDependencies": {
     "eslint": "^9.0.0"
   },
-  "repository": "github:100xventures/eslint-config",
-  "scripts": {
-    "release:patch": "pnpm version patch && pnpm publish --access public",
-    "release:minor": "pnpm version minor && pnpm publish --access public",
-    "release:major": "pnpm version major && pnpm publish --access public"
-  }
+  "repository": "github:100xventures/eslint-config"
 }
