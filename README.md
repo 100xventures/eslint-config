@@ -10,6 +10,8 @@ pnpm add -D @100xventures/eslint-config
 
 ## Usage
 
+Add the following to your `eslint.config.mjs` file:
+
 ### Next.js
 
 ```javascript
