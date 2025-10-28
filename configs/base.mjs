@@ -4,7 +4,7 @@ import globals from 'globals';
 const base = [
   {
     ignores: [
-      'node_modules/',
+      'node_modules/**',
       '*.d.ts', // Ignore all TypeScript declaration files
     ],
   },
