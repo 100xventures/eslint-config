@@ -1,4 +1,5 @@
 import importPlugin from 'eslint-plugin-import';
+import globals from 'globals';
 
 const base = [
   {
@@ -9,6 +10,9 @@ const base = [
   },
   {
     files: ['**/*.{js,jsx,mjs,ts,tsx}'],
+    languageOptions: {
+      globals: globals.node,
+    },
     plugins: {
       import: importPlugin,
     },
