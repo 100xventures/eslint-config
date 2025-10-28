@@ -25,12 +25,16 @@ export default [
 ];
 ```
 
-### Other Projects
+### Node.js
 
 ```javascript
 import { base } from '@100xventures/eslint-config';
+import js from '@eslint/js';
 
-export default [...base];
+export default [
+  js.configs.recommended,
+  ...base,
+];
 ```
 
 ## Customization
@@ -39,8 +43,10 @@ Configs are fully composable. Override or extend as needed:
 
 ```javascript
 import { base } from '@100xventures/eslint-config';
+import js from '@eslint/js';
 
 export default [
+  js.configs.recommended,
   ...base,
   {
     rules: { 'semi': ['error', 'never'] }, // Override rules
