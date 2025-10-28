@@ -13,6 +13,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Verify tag is on main
+        run: |
+          branch=$(git branch -r --contains "$GITHUB_REF" | grep origin/ | sed 's|origin/||' | head -n 1)
+          echo "Tag belongs to branch: $branch"
+          if [ "$branch" != "main" ]; then
+            echo "❌ Tag is not on main. Skipping release."
+            exit 0
+          fi
+
       - name: Create GitHub Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
