@@ -1,5 +1,6 @@
 const next = [
   {
+    name: '@100xventures/eslint-config/next',
     ignores: [
       '.next/', // Next.js build output
       'src/components/ui/', // Ignore shadcn/ui components

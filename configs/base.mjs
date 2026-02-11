@@ -3,6 +3,7 @@ import globals from 'globals';
 
 const base = [
   {
+    name: '@100xventures/eslint-config/base',
     ignores: [
       'node_modules/**',
       '*.d.ts', // Ignore all TypeScript declaration files
