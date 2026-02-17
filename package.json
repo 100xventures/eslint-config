@@ -25,7 +25,7 @@
   ],
   "dependencies": {
     "eslint-plugin-import": "^2.0.0",
-    "globals": "^16.0.0"
+    "globals": "^17.3.0"
   },
   "engines": {
     "node": ">=24"
