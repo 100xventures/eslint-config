@@ -2,7 +2,7 @@
   "name": "@100xventures/eslint-config",
   "type": "module",
   "version": "1.0.1",
-  "description": "Shared ESLint config for 100x projects",
+  "description": "Opinionated ESLint config",
   "license": "MIT",
   "main": "index.mjs",
   "types": "index.d.ts",
