@@ -1,6 +1,6 @@
 # @100xventures/eslint-config
 
-Opinionated ESLint config for 100x projects.
+Opinionated ESLint config used across [100x](https://100xventures.com) products.
 
 ## Installation
 
