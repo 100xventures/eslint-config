@@ -1,3 +1,4 @@
+import reactPlugin from 'eslint-plugin-react';
 import tailwindcssPlugin from 'eslint-plugin-tailwindcss';
 
 const next = [
@@ -12,9 +13,18 @@ const next = [
   {
     files: ['**/*.{js,jsx,mjs,ts,tsx}'],
     plugins: {
+      react: reactPlugin,
       tailwindcss: tailwindcssPlugin,
     },
     rules: {
+      'react/jsx-tag-spacing': [
+        'error', { 
+          closingSlash: 'never',
+          beforeSelfClosing: 'always',
+          afterOpening: 'never',
+          beforeClosing: 'never',
+        },
+      ],
       'tailwindcss/classnames-order': 'error', // Enforces classnames order
       'tailwindcss/enforces-shorthand': 'error', // Enforces shorthand syntax
     },
