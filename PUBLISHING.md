@@ -8,7 +8,7 @@
 
 ```bash
 # 1. Authenticate
-npm login
+pnpm login
 
 # 2. Ensure clean state
 git status
