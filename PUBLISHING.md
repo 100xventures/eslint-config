@@ -17,10 +17,10 @@ git status
 pnpm install
 
 # 4. Bump version (patch/minor/major)
-npm version patch  # or minor, or major
+pnpm version patch  # or minor, or major
 
 # 5. Publish
-npm publish --access public
+pnpm publish --access public
 
 # 6. Push to GitHub
 git push && git push --tags
