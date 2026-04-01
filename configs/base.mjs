@@ -22,10 +22,40 @@ const base = [
       'semi': ['error', 'always'], // Enforces trailing semicolons
       'quotes': ['error', 'single', { 'avoidEscape': true }], // Enforces single quotes, except when avoiding escape
       'jsx-quotes': ['error', 'prefer-double'], // Enforces double quotes in JSX attributes
-      'padding-line-between-statements': ['error', { blankLine: 'always', prev: '*', next: 'return' }], // Enforces blank line before return statements
-      'import/order': ['error', { groups: ['external', 'builtin', 'internal', 'sibling', 'parent', 'index'], alphabetize: { order: 'asc', caseInsensitive: true } }], // Enforces import order
+      'padding-line-between-statements': [
+        'error', {
+          blankLine: 'always',
+          prev: '*',
+          next: 'return',
+        },
+      ], // Enforces blank line before return statements
+      'import/order': [
+        'error', {
+          groups: [
+            'external',
+            'builtin',
+            'internal',
+            'sibling',
+            'parent',
+            'index',
+          ],
+          alphabetize: {
+            order: 'asc',
+            caseInsensitive: true,
+            orderImportKind: 'ignore',
+          },
+          named: true,
+        },
+      ], // Enforces import order
       'eol-last': ['error', 'always'], // Enforces trailing newline at end of file
       'linebreak-style': ['error', 'unix'], // Enforces Unix line endings
+      'no-multiple-empty-lines': [
+        'error', {
+          max: 1,
+          maxBOF: 0,
+          maxEOF: 0,
+        },
+      ], // No blank lines after the last line (avoids "extra newline at EOF" vs formatters)
     },
     settings: {
       'import/internal-regex': '^@/(components|lib|hooks|utils|public)/',

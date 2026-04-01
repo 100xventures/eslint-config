@@ -29,6 +29,7 @@ const next = [
       'better-tailwindcss/no-deprecated-classes': 'error',
       'better-tailwindcss/no-unnecessary-whitespace': 'error',
       'better-tailwindcss/no-conflicting-classes': 'error',
+      'react/no-danger': 'error', // Avoid using dangerouslySetInnerHTML in React components
       'react/jsx-tag-spacing': [
         'error', { 
           closingSlash: 'never',
