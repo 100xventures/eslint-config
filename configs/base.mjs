@@ -25,6 +25,7 @@ const base = [
       'padding-line-between-statements': ['error', { blankLine: 'always', prev: '*', next: 'return' }], // Enforces blank line before return statements
       'import/order': ['error', { groups: ['external', 'builtin', 'internal', 'sibling', 'parent', 'index'], alphabetize: { order: 'asc', caseInsensitive: true } }], // Enforces import order
       'eol-last': ['error', 'always'], // Enforces trailing newline at end of file
+      'linebreak-style': ['error', 'unix'], // Enforces Unix line endings
     },
     settings: {
       'import/internal-regex': '^@/(components|lib|hooks|utils|public)/',
