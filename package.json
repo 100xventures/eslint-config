@@ -24,6 +24,7 @@
     "eslint-config"
   ],
   "dependencies": {
+    "eslint-plugin-better-tailwindcss": "^4.3.2",
     "eslint-plugin-import": "^2.0.0",
     "eslint-plugin-react": "^7.37.0",
     "globals": "^17.3.0"
