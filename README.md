@@ -15,25 +15,29 @@ Add the following to your `eslint.config.mjs` file:
 ### Next.js
 
 ```javascript
-import { base, next } from '@100xventures/eslint-config';
-import coreWebVitals from 'eslint-config-next/core-web-vitals';
+import { base, next, test } from '@100xventures/eslint-config';
+import nextVitals from 'eslint-config-next/core-web-vitals';
+import nextTs from 'eslint-config-next/typescript';
 
 export default [
-  ...coreWebVitals,
+  ...nextVitals,
+  ...nextTs,
   ...base,
   ...next,
+  ...test,
 ];
 ```
 
 ### Node.js
 
 ```javascript
-import { base } from '@100xventures/eslint-config';
-import js from '@eslint/js';
+import { base, test } from '@100xventures/eslint-config';
+import ts from 'typescript-eslint';
 
 export default [
-  js.configs.recommended,
+  ...ts.configs.recommended,
   ...base,
+  ...test,
 ];
 ```
 
@@ -43,10 +47,10 @@ Configs are fully composable. Override or extend as needed:
 
 ```javascript
 import { base } from '@100xventures/eslint-config';
-import js from '@eslint/js';
+import ts from 'typescript-eslint';
 
 export default [
-  js.configs.recommended,
+  ...ts.configs.recommended,
   ...base,
   {
     rules: { 'semi': ['error', 'never'] }, // Override rules

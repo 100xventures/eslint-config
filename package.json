@@ -24,6 +24,7 @@
     "eslint-config"
   ],
   "dependencies": {
+    "@vitest/eslint-plugin": "^1.6.14",
     "eslint-plugin-better-tailwindcss": "^4.3.2",
     "eslint-plugin-import": "^2.0.0",
     "eslint-plugin-react": "^7.37.0",
