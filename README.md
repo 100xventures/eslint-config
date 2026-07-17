@@ -1,4 +1,4 @@
-# @100xventures/eslint-config
+# `@100xventures/eslint-config`
 
 Opinionated ESLint config used across [100x](https://100xventures.com/) products.
 
