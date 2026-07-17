@@ -1,27 +1,47 @@
-# Publishing to npm
+# Publishing package
+
+This repository publishes `@100xventures/eslint-config` as a public package on
+npm.
 
 ## Prerequisites
 
-- npm account with access to `@100xventures` organization
+- npm account with publish access to the `@100xventures` organization
+- npm two-factor authentication enabled
 
-## Quick Publish Workflow
+Authenticate against the npm registry:
 
-```bash
-# 1. Authenticate
+```sh
 pnpm login
+pnpm whoami
+```
 
-# 2. Ensure clean state
-git status
+Ensure clean Git working tree on the commit being released:
 
-# 3. Sync lockfile
-pnpm install
+```sh
+git status --short
+pnpm install --frozen-lockfile
+```
 
-# 4. Bump version (patch/minor/major)
-pnpm version patch  # or minor, or major
+## Publish
 
-# 5. Publish
+### 1. Version
+
+Choose `patch`, `minor`, or `major`:
+
+```sh
+pnpm version patch
+pnpm install --lockfile-only
+```
+
+### 2. Publish
+
+```sh
 pnpm publish --access public
+```
 
-# 6. Push to GitHub
-git push && git push --tags
+### 3. Verify and push
+
+```sh
+pnpm view @100xventures/eslint-config@1.9.1 version
+git push origin HEAD --follow-tags
 ```
