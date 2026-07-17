@@ -30,7 +30,6 @@ Choose `patch`, `minor`, or `major`:
 
 ```sh
 pnpm version patch
-pnpm install --lockfile-only
 ```
 
 ### 2. Publish
