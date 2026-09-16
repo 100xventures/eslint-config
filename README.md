@@ -16,12 +16,8 @@ Add the following to your `eslint.config.mjs` file:
 
 ```javascript
 import { base, next, test } from '@100xventures/eslint-config';
-import nextVitals from 'eslint-config-next/core-web-vitals';
-import nextTs from 'eslint-config-next/typescript';
 
 export default [
-  ...nextVitals,
-  ...nextTs,
   ...base,
   ...next,
   ...test,
@@ -58,3 +54,4 @@ export default [
   },
 ];
 ```
+
