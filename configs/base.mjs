@@ -7,6 +7,10 @@ const base = [
     ignores: [
       'node_modules/**',
       '*.d.ts', // Ignore all TypeScript declaration files
+      'blob-report/**', // Playwright blob reporter output
+      'coverage/**', // Test coverage output
+      'playwright-report/**', // Playwright HTML report
+      'test-results/**', // Playwright test output
     ],
   },
   {
