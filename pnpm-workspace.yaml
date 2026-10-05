@@ -1,2 +1,5 @@
 allowBuilds:
   unrs-resolver: true
+
+# Enforce the built-in 24-hour release-age cutoff when resolving.
+minimumReleaseAgeStrict: true
