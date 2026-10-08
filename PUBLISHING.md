@@ -7,24 +7,41 @@ npm. Pushing the version tag also creates a GitHub Release.
 
 - npm account with publish access to the `@100xventures` organization
 - npm two-factor authentication enabled
+- Dependencies installed (`pnpm install --frozen-lockfile`)
 
-Authenticate against the npm registry:
-
-```sh
-pnpm login
-pnpm whoami
-```
-
-Ensure clean Git working tree on the commit being released:
+### Local login
 
 ```sh
-git status --short
-pnpm install --frozen-lockfile
+npm login
+npm whoami
 ```
+
+`npm whoami` is the session used to publish. `pnpm whoami` can succeed with a
+stale token. Do not put a long-lived `_authToken` in `~/.npmrc`.
 
 ## Publish
 
+Run this from a clean `main` that matches `origin/main`:
+
+```sh
+git status --short
+git fetch origin main
+git rev-parse HEAD origin/main
+```
+
+The two revisions must match.
+
 ### 1. Version
+
+Check the published version first:
+
+```sh
+npm view @100xventures/eslint-config version
+```
+
+It must match `package.json`. If the local version is already ahead, skip the
+bump and continue from the push. If it is behind, set `package.json` to the
+published version before releasing.
 
 Choose `patch`, `minor`, or `major`:
 
@@ -32,26 +49,64 @@ Choose `patch`, `minor`, or `major`:
 pnpm version patch
 ```
 
-This updates `package.json` and creates an annotated `v*` tag (for example `v1.10.0`).
+This commits `package.json` and creates an annotated `v*` tag (for example
+`v1.10.1`). Do not run it again if a later step fails.
 
-### 2. Publish to npm
-
-```sh
-pnpm publish --access public
-```
-
-### 3. Verify npm
+### 2. Push commit and tag
 
 ```sh
-pnpm view @100xventures/eslint-config version
+git push --atomic --follow-tags origin HEAD:refs/heads/main
 ```
 
-### 4. Push commit and tag
+The tag must land on `origin/main`. Pushing it runs
+`.github/workflows/release.yml`, which creates the GitHub Release
+(`gh release create --generate-notes`). Do not create the release by hand.
+
+### 3. Publish to npm
+
+From this repository root:
 
 ```sh
-git push origin HEAD --follow-tags
+npm publish --access public
 ```
 
-`--follow-tags` pushes `main` and the `v*` tag. The tag must land on `origin/main`.
+npm may prompt for 2FA or a passkey. `pnpm publish` sends `~/.npmrc`'s token
+and never opens that prompt.
 
-Pushing the tag runs `.github/workflows/release.yml`, which creates the GitHub Release (`gh release create --generate-notes`). Do not create the release by hand.
+### 4. Verify npm
+
+```sh
+npm view @100xventures/eslint-config version --prefer-online
+```
+
+### If the atomic Git push fails
+
+The version commit and tag stay local, and the remote is unchanged. Fix the
+Git issue, retry the push above, then publish. Do not run `pnpm version`
+again.
+
+### If publish fails after the push
+
+The version commit and tag are already on origin, and the GitHub Release may
+already exist. Fix the npm issue, then retry the same version:
+
+```sh
+npm publish --access public
+npm view @100xventures/eslint-config@version version --prefer-online
+```
+
+Do not run `pnpm version` again, and do not delete the tag or the GitHub
+Release.
+
+### If publish succeeds but verification times out
+
+`npm publish` already accepted the version, and the commit and tag are already
+on origin. The registry can take longer than usual to show the new version.
+Re-check it:
+
+```sh
+npm view @100xventures/eslint-config@version version --prefer-online
+```
+
+When that prints the version, the release is complete. Leave the existing
+publish and tag in place.
