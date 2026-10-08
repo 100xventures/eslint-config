@@ -26,6 +26,7 @@ const base = [
       'semi': ['error', 'always'], // Enforces trailing semicolons
       'quotes': ['error', 'single', { 'avoidEscape': true }], // Enforces single quotes, except when avoiding escape
       'jsx-quotes': ['error', 'prefer-double'], // Enforces double quotes in JSX attributes
+      'curly': ['error', 'all'], // Requires braces around every control-statement body
       'padding-line-between-statements': [
         'error', {
           blankLine: 'always',
