@@ -27,6 +27,7 @@ const base = [
       'quotes': ['error', 'single', { 'avoidEscape': true }], // Enforces single quotes, except when avoiding escape
       'jsx-quotes': ['error', 'prefer-double'], // Enforces double quotes in JSX attributes
       'curly': ['error', 'all'], // Requires braces around every control-statement body
+      'brace-style': ['error', '1tbs', { allowSingleLine: false }], // Disallows single-line blocks
       'padding-line-between-statements': [
         'error', {
           blankLine: 'always',
