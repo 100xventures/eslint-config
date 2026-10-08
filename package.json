@@ -25,8 +25,8 @@
   ],
   "dependencies": {
     "@vitest/eslint-plugin": "^1.6.27",
-    "eslint-config-next": "^16.3.8",
-    "eslint-plugin-better-tailwindcss": "^4.8.0",
+    "eslint-config-next": "^16.4.0",
+    "eslint-plugin-better-tailwindcss": "^4.9.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^17.13.0"
@@ -47,5 +47,5 @@
     "type": "git",
     "url": "git+https://github.com/100xventures/eslint-config.git"
   },
-  "packageManager": "pnpm@12.9.1"
+  "packageManager": "pnpm@12.10.1+sha512.ba40a37eb1a370d60fea8c4cf1d364c13bcccef518e98ad2bcee954f539d38da37458e58261a3fa55e06523450ea0ffff9f497b135be41f2c15c1642bacace6c"
 }
