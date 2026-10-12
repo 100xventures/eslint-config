@@ -6,6 +6,7 @@ const base = [
     name: '@100xventures/eslint-config/base',
     ignores: [
       'node_modules/**',
+      'dist/**', // Build output
       '*.d.ts', // Ignore all TypeScript declaration files
       'blob-report/**', // Playwright blob reporter output
       'coverage/**', // Test coverage output

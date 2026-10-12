@@ -50,7 +50,7 @@ export default [
   ...base,
   {
     rules: { 'semi': ['error', 'never'] }, // Override rules
-    ignores: ['dist/', 'build/'], // Add ignores
+    ignores: ['build/'], // Add ignores
   },
 ];
 ```
