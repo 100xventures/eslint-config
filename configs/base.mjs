@@ -78,8 +78,14 @@ const base = [
           maxEOF: 0,
         },
       ], // No blank lines after the last line (avoids "extra newline at EOF" vs formatters)
-      'no-unused-vars': ['error', { argsIgnorePattern: '^_' }], // Enforces no unused variables, except for variables starting with _
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }], // If variables start with _ the rule can't be disabled
+      'no-unused-vars': 'off', // The TypeScript rule below covers JS and TS
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+        },
+      ], // Allows unused args and variables whose names start with _
     },
     settings: {
       'import/internal-regex': '^@/(components|lib|hooks|utils|public)/',

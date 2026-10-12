@@ -66,6 +66,7 @@ const next = [
     },
   },
   {
+    // eslint-config-next/typescript resets this rule to `warn` with no `_` patterns.
     name: '@100xventures/eslint-config/next/unused-vars',
     files: ['**/*.{js,jsx,mjs,ts,tsx}'],
     rules: {
