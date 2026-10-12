@@ -5,10 +5,8 @@ Opinionated ESLint config used across [100x](https://100xventures.com/) products
 ## Installation
 
 ```bash
-pnpm add -D @100xventures/eslint-config typescript-eslint
+pnpm add -D @100xventures/eslint-config
 ```
-
-`typescript-eslint` is a required peer dependency. `base` registers its parser and the `@typescript-eslint` plugin.
 
 ## Usage
 
@@ -43,10 +41,8 @@ Configs are fully composable. Override or extend as needed:
 
 ```javascript
 import { base } from '@100xventures/eslint-config';
-import ts from 'typescript-eslint';
 
 export default [
-  ...ts.configs.recommended,
   ...base,
   {
     rules: { 'semi': ['error', 'never'] }, // Override rules
