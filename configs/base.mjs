@@ -1,5 +1,6 @@
 import importPlugin from 'eslint-plugin-import';
 import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 const base = [
   {
@@ -13,6 +14,24 @@ const base = [
       'playwright-report/**', // Playwright HTML report
       'test-results/**', // Playwright test output
     ],
+  },
+  {
+    name: '@100xventures/eslint-config/typescript',
+    plugins: {
+      '@typescript-eslint': tseslint.plugin,
+    },
+  },
+  {
+    name: '@100xventures/eslint-config/typescript-parser',
+    files: ['**/*.{ts,tsx}'],
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
   },
   {
     files: ['**/*.{js,jsx,mjs,ts,tsx}'],
