@@ -87,6 +87,17 @@ const base = [
           varsIgnorePattern: '^_',
         },
       ], // Allows unused args and variables whose names start with _
+      '@typescript-eslint/naming-convention': [
+        'error',
+        {
+          selector: 'default',
+          format: null, // Do not impose a general casing format
+          custom: {
+            regex: 'openAi|OpenAi|openAI|Openai|typeSafe|Typesafe|gitHub|Github|cloudFlare|CloudFlare|typeScript|Typescript|javaScript|Javascript',
+            match: false,
+          },
+        },
+      ], // Brand names: openai/OpenAI, typesafe/TypeSafe, github/GitHub, cloudflare/Cloudflare, typescript/TypeScript, javascript/JavaScript
     },
     settings: {
       'import/internal-regex': '^@/(components|lib|hooks|utils|public)/',
