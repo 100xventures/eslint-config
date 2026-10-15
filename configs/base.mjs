@@ -1,3 +1,4 @@
+import stylistic from '@stylistic/eslint-plugin';
 import importPlugin from 'eslint-plugin-import';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
@@ -89,6 +90,19 @@ const base = [
     },
     settings: {
       'import/internal-regex': '^@/(components|lib|hooks|utils|public)/',
+    },
+  },
+  {
+    name: '@100xventures/eslint-config/type-members',
+    files: ['**/*.{ts,tsx}'],
+    plugins: {
+      '@stylistic': stylistic,
+    },
+    rules: {
+      '@stylistic/member-delimiter-style': ['error', {
+        multiline: { delimiter: 'semi', requireLast: true },
+        singleline: { delimiter: 'semi', requireLast: false },
+      }], // Semicolons between type members; trailing semicolon only when multiline
     },
   },
 ];

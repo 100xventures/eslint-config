@@ -24,6 +24,7 @@
     "eslint-config"
   ],
   "dependencies": {
+    "@stylistic/eslint-plugin": "^5.10.0",
     "@vitest/eslint-plugin": "^1.6.27",
     "eslint-config-next": "^16.4.0",
     "eslint-plugin-better-tailwindcss": "^4.9.0",
