@@ -70,6 +70,7 @@ const base = [
           named: true,
         },
       ], // Enforces import order
+      'import/newline-after-import': 'error', // Enforces a blank line after the last import
       'eol-last': ['error', 'always'], // Enforces trailing newline at end of file
       'linebreak-style': ['error', 'unix'], // Enforces Unix line endings
       'no-multiple-empty-lines': [
